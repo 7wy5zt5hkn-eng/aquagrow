@@ -1,0 +1,204 @@
+:root {
+    --bg-color: #f0f4f8;
+    --card-color: #ffffff;
+    --primary-color: #2196f3;
+    --text-color: #333333;
+    --accent-color: #4caf50;
+    --secondary-color: #78909c;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    -webkit-tap-highlight-color: transparent;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+}
+
+.app-container {
+    width: 100%;
+    max-width: 414px; /* Tamanho padrão de tela de iPhone */
+    background: var(--card-color);
+    min-height: 100vh;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 24px;
+    color: var(--primary-color);
+}
+
+.streak-container {
+    background: #fff3e0;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #ff9800;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.plant-card {
+    background: #f1f8e9;
+    border: 2px solid #c5e1a5;
+    border-radius: 16px;
+    padding: 20px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.plant-emoji {
+    font-size: 60px;
+    margin-bottom: 10px;
+    transition: transform 0.3s ease;
+}
+
+#plant-status {
+    font-size: 14px;
+    color: #558b2f;
+    font-weight: 500;
+}
+
+.progress-section {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.water-display {
+    font-size: 40px;
+    font-weight: bold;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+.water-display .unit {
+    font-size: 18px;
+    color: #888888;
+}
+
+.progress-bar-bg {
+    width: 100%;
+    height: 24px;
+    background: #e0e0e0;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+#progress-bar-fill {
+    width: 0%;
+    height: 100%;
+    background: var(--primary-color);
+    transition: width 0.4s ease-out;
+}
+
+.controls-section {
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 16px;
+}
+
+.target-settings {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #eeeeee;
+    padding-bottom: 15px;
+}
+
+.controls-section h3 {
+    font-size: 16px;
+    margin-bottom: 15px;
+    color: #666;
+}
+
+.quick-buttons {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+button {
+    flex: 1;
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 14px;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+button:active {
+    background: #1976d2;
+}
+
+.secondary-btn {
+    background: var(--secondary-color);
+}
+
+.secondary-btn:active {
+    background: #546e7a;
+}
+
+.custom-input-container {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+input[type="number"] {
+    flex: 2;
+    padding: 12px;
+    border: 2px solid #dddddd;
+    border-radius: 12px;
+    font-size: 16px;
+    outline: none;
+}
+
+input[type="number"]:focus {
+    border-color: var(--primary-color);
+}
+
+.custom-input-container button {
+    flex: 1;
+    background: var(--accent-color);
+}
+
+.custom-input-container button:active {
+    background: #388e3c;
+}
+
+.reset-btn {
+    background: none;
+    color: #888;
+    font-size: 12px;
+    padding: 5px;
+    font-weight: normal;
+    display: block;
+    margin: 10px auto 0 auto;
+}
