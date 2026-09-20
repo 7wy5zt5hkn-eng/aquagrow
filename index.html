@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>AquaGrow - Controle de Água</title>
+    <!-- Configurações para funcionar como App no iPhone (PWA) -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="AquaGrow">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Cabeçalho com Gamificação -->
+        <header>
+            <div class="streak-container">
+                <span class="fire-icon">🔥</span>
+                <span id="streak-count">0</span> dias seguidos
+            </div>
+            <h1>AquaGrow</h1>
+        </header>
+
+        <!-- Área da Plantinha (Evolução Visual) -->
+        <div class="plant-card">
+            <div id="plant-stage" class="plant-emoji">🫙</div>
+            <p id="plant-status">Defina sua meta e beba água para começar o dia!</p>
+        </div>
+
+        <!-- Progresso Principal -->
+        <div class="progress-section">
+            <div class="progress-circle-container">
+                <div class="water-display">
+                    <span id="current-water">0</span>
+                    <span class="unit">/ <span id="target-water">2000</span> ml</span>
+                </div>
+            </div>
+            <div class="progress-bar-bg">
+                <div id="progress-bar-fill"></div>
+            </div>
+        </div>
+
+        <!-- Botões de Ação e Configurações -->
+        <div class="controls-section">
+            <!-- Configuração de Meta Dinâmica -->
+            <div class="target-settings">
+                <input type="number" id="new-target" placeholder="Nova meta diária (ml)" min="1">
+                <button onclick="updateTarget()" class="secondary-btn">Definir Meta</button>
+            </div>
+
+            <h3>Adicionar Água</h3>
+            <div class="quick-buttons">
+                <button onclick="addWater(250)">+250 ml</button>
+                <button onclick="addWater(500)">+500 ml</button>
+            </div>
+            
+            <div class="custom-input-container">
+                <input type="number" id="custom-amount" placeholder="Outro valor (ml)" min="1">
+                <button onclick="addCustomWater()">Adicionar</button>
+            </div>
+
+            <button class="reset-btn" onclick="resetDayManual()">Zerar Dia</button>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
